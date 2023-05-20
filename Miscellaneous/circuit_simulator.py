@@ -19,7 +19,7 @@ PARAM = {
     'RG': 13e3,
     'CG': 470e-12,
     'L1':0.67e-3,
-    'L2':0.5e-3,
+    'L2':0.61e-3,
     'RL':200,
     'CDET': 1e-6,
     'RDET': 100e3,
@@ -130,29 +130,21 @@ if __name__ == "__main__":
     VOUT = comparator(t, PARAM, VF2)
 
     # Plot results
-    # plt.plot(t*1e6 - 100, VS, label="$V_{S}$", color="darkred")
-    # plt.plot(t*1e6 - 100, VL1, label="$V_{L1}$", color="darkred")
-    # plt.plot(t*1e6 - 100, VL2, label="$V_{L2}$", color="blue")
-    # plt.plot(t*1e6 - 100, VC1, label="$V_{C1}$", color="darkred")
-    # plt.plot(t*1e6 - 100, VC2, label="$V_{C2}$", color="blue")
-    # plt.plot(t*1e6 - 100, VF1, label="$V_{F1}$", color="darkred")
-    # plt.plot(t*1e6 - 100, VF2, label="$V_{F2}$", color="blue")
-    plt.axhline(y=5, color='blue')
-    plt.axhline(y=0, color='darkred')
+#     plt.plot(t*1e6 - 100, VS, label="$V_{S}$", color="darkred")
+#     plt.plot(t*1e6 - 100, VL1, label="$V_{L1}$", color="darkred")
+#     plt.plot(t*1e6 - 100, VL2, label="$V_{L2}$", color="blue")
+#     plt.plot(t*1e6 - 100, VC1, label="$V_{C1}$", color="darkred")
+#     plt.plot(t*1e6 - 100, VC2, label="$V_{C2}$", color="blue")
+#     plt.plot(t*1e6 - 100, VF1, label="$V_{F1}$", color="darkred")
+#     plt.plot(t*1e6 - 100, VF2, label="$V_{F2}$", color="blue")
 
 
     plt.xlim(X_START, X_END)
     plt.ylim(Y_START, Y_END)
-    # plt.xlabel('Temps (µs)')
-    # plt.ylabel('Tension (V)')
-
-    ax = plt.gca()
-    ax.get_xaxis().set_visible(False)
-    ax.get_yaxis().set_visible(False)
-
-    #plt.title (TITLE)
-    #plt.legend(loc="upper right", fontsize='x-large')
+    plt.xlabel('Temps (µs)')
+    plt.ylabel('Tension (V)')
+    plt.title (TITLE)
+    plt.legend(loc="upper right", fontsize='x-large')
     plt.rcParams["figure.figsize"] = [7.00, 3.50]
     plt.rcParams["figure.autolayout"] = True
-    plt.savefig('./Signal Vout.svg', format='svg', dpi=1200)
     plt.show()
